@@ -27,6 +27,7 @@
     if (!skView.scene) {
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
+        skView.showsDrawCount = YES;
         
         // Create and configure the scene.
         SKScene * scene = [TPGameScene sceneWithSize:skView.bounds.size];
