@@ -14,7 +14,7 @@
 
 @end
 
-static NSString* const kKeyPlaneAnimation = @"PlanaAnimation";
+static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
 
 @implementation TPPlane
 
@@ -26,6 +26,13 @@ static NSString* const kKeyPlaneAnimation = @"PlanaAnimation";
         // Init array to hold animation actions.
         _planeAnimations = [[NSMutableArray alloc] init];
         
+        
+        NSArray *frames = @[[SKTexture textureWithImageNamed:@"planeBlue1"],
+                            [SKTexture textureWithImageNamed:@"planeGreen2"],
+                            [SKTexture textureWithImageNamed:@"planeRed3"]];
+        SKAction *animation = [SKAction animateWithTextures:frames timePerFrame:0.133 resize:NO restore:NO];
+        [self runAction:[SKAction repeatActionForever:animation]];
+        
         // Load animation plist file.
         NSString *path = [[NSBundle mainBundle] pathForResource:@"PlaneAnimations" ofType:@"plist"];
         NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -33,7 +40,7 @@ static NSString* const kKeyPlaneAnimation = @"PlanaAnimation";
             [self.planeAnimations addObject:[self animationFromArray:[animations objectForKey:key] withDuration:0.4]];
         }
         
-        [self setRandomColour];
+        //[self setRandomColour];
     }
     return self;
 }
