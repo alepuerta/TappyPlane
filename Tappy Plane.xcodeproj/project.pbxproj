@@ -242,6 +242,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Alejandro;
 				TargetAttributes = {
+					A91FF5CB1B447AB7008298F1 = {
+						DevelopmentTeam = 2V3Q872374;
+					};
 					A91FF5F31B447AB7008298F1 = {
 						TestTargetID = A91FF5CB1B447AB7008298F1;
 					};
@@ -425,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tappy Plane/Tappy Plane-Prefix.pch";
 				INFOPLIST_FILE = "Tappy Plane/Tappy Plane-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -439,10 +445,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tappy Plane/Tappy Plane-Prefix.pch";
 				INFOPLIST_FILE = "Tappy Plane/Tappy Plane-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
