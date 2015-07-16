@@ -164,6 +164,10 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     if (self.accelerating) {
         [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
     }
+    
+    if (!self.crashed) {
+        self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), -400) / 400;
+    }
 }
 
 
