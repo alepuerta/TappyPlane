@@ -78,6 +78,18 @@ static NSString* const kKeyPlaneAnimation = @"PlaneAnimation";
     return self;
 }
 
+-(void)reset
+{
+        // Set plane's initial values.
+    self.crashed = NO;
+    self.engineRunning = YES;
+    self.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+    self.zRotation = 0.0;
+    self.physicsBody.angularVelocity = 0.0;
+    [self setRandomColour];
+}
+
+
 -(void)setEngineRunning:(BOOL)engineRunning
 {
     _engineRunning = engineRunning && !self.crashed;

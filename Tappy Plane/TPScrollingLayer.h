@@ -12,4 +12,6 @@
 
 -(id)initWithTiles:(NSArray*)tileSpriteNodes;
 
+-(void)layoutTiles;
+
 @end

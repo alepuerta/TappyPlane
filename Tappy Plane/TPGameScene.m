@@ -49,7 +49,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         }
         
         _background = [[TPScrollingLayer alloc] initWithTiles:backgroundTiles];
-        _background.position = CGPointMake(0, 30);
         _background.horizontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
@@ -58,7 +57,6 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _foreground = [[TPScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],
                                                                [self generateGroundTile],
                                                                [self generateGroundTile]]];
-        _foreground.position = CGPointZero;
         _foreground.horizontalScrollSpeed = -80;
         _foreground.scrolling = YES;
         [_world addChild:_foreground];
@@ -68,9 +66,10 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
-        _player.engineRunning = YES;
     
-    
+        // Start a new game
+        [self newGame];
+        
     }
     return self;
 }
@@ -111,11 +110,34 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     return sprite;
 }
 
+-(void)newGame
+{
+    // Reset layers.
+    self.foreground.position = CGPointZero;
+    [self.foreground layoutTiles];
+    self.background.position = CGPointMake(0, 30);
+    [self.background layoutTiles];
+    
+    // Reset plane.
+    self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+    self.player.physicsBody.affectedByGravity = NO;
+    [self.player reset];
+
+}
+
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
-        _player.physicsBody.affectedByGravity = YES;
-        self.player.accelerating = YES;
+        if (self.player.crashed) {
+            // Reset game.
+            [self newGame];
+        }
+        else {
+            _player.physicsBody.affectedByGravity = YES;
+            self.player.accelerating = YES;
+        }
+        
     }
 }
 
