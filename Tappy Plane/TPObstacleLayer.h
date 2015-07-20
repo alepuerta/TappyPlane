@@ -10,4 +10,7 @@
 
 @interface TPObstacleLayer : TPScrollingNode
 
+@property (nonatomic) CGFloat floor;
+@property (nonatomic) CGFloat ceiling;
+
 @end
