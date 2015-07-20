@@ -10,12 +10,14 @@
 #import "TPPlane.h"
 #import "TPScrollingLayer.h"
 #import "TPConstants.h"
+#import "TPObstacleLayer.h"
 
 @interface TPGameScene()
 
 @property (nonatomic) TPPlane *player;
 @property (nonatomic) SKNode *world;
 @property (nonatomic) TPScrollingLayer *background;
+@property (nonatomic) TPObstacleLayer *obstacles;
 @property (nonatomic) TPScrollingLayer *foreground;
 
 @end
@@ -52,6 +54,14 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _background.horizontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
+        
+        // Setup obstacle layer.
+        _obstacles = [[TPObstacleLayer alloc] init];
+        _obstacles.horizontalScrollSpeed = -80;
+        _obstacles.scrolling = YES;
+        _obstacles.floor = 0.0;
+        _obstacles.ceiling = self.size.height;
+        [_world addChild:_obstacles];
         
         // Setup foreground.
         _foreground = [[TPScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],
@@ -115,6 +125,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     // Reset layers.
     self.foreground.position = CGPointZero;
     [self.foreground layoutTiles];
+    self.obstacles.position = CGPointZero;
+    [self.obstacles reset];
+    self.obstacles.scrolling = NO;
     self.background.position = CGPointMake(0, 30);
     [self.background layoutTiles];
     
@@ -136,6 +149,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         else {
             _player.physicsBody.affectedByGravity = YES;
             self.player.accelerating = YES;
+            self.obstacles.scrolling = YES;
         }
         
     }
@@ -171,6 +185,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     if (!self.player.crashed) {
         [self.background updateWithTimeElapsed:timeElapsed];
         [self.foreground updateWithTimeElapsed:timeElapsed];
+        [self.obstacles updateWithTimeElapsed:timeElapsed];
     }
 }
 

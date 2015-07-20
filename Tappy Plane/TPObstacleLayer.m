@@ -24,6 +24,19 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 
 @implementation TPObstacleLayer
 
+-(void)reset
+{
+    // Loop throught child nodes and repositoion for reuse.
+    for (SKNode *node in self.children) {
+        node.position = CGPointMake(-1000, 0);
+    }
+    
+    // Reposition marker
+    if (self.scene) {
+        self.marker = self.scene.size.width + kTPMarkerBuffer;
+    }
+}
+
 -(void)updateWithTimeElapsed:(NSTimeInterval)timeElapsed
 {
     [super updateWithTimeElapsed:timeElapsed];
@@ -42,8 +55,8 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
 -(void)addObstacleSet
 {
     // Get mountain nodes.
-    SKSpriteNode *mountainUp = [self createObjectForKey:kTPKeyMountainUp];
-    SKSpriteNode *mountainDown = [self createObjectForKey:kTPKeyMountainDown];
+    SKSpriteNode *mountainUp = [self getUnusedObjectForKey:kTPKeyMountainUp];
+    SKSpriteNode *mountainDown = [self getUnusedObjectForKey:kTPKeyMountainDown];
     
     // Calculate maximum variation.
     CGFloat maxVariation = (mountainUp.size.height + mountainDown.size.height + kTPVerticalGap) - (self.ceiling - self.floor);
@@ -55,6 +68,25 @@ static NSString *const kTPKeyMountainDown = @"MountainDown";
     
     // Reposition marker.
     self.marker += kTPSpaceBetweenObstacleSets;
+}
+
+-(SKSpriteNode*)getUnusedObjectForKey:(NSString*)key
+{
+    if (self.scene) {
+        // Get left edge of screen in local coordinates.
+        CGFloat leftEdgeInLocalCoords = [self.scene convertPoint:CGPointMake(-self.scene.size.width * self.scene.anchorPoint.x, 0) toNode:self].x;
+        
+        // Try find object for key to the left of the screen.
+        for (SKSpriteNode *node in self.children) {
+            if (node.name == key && node.frame.origin.x + node.frame.size.width < leftEdgeInLocalCoords) {
+                // Return unused object.
+                return node;
+            }
+        }
+    }
+    
+    // Couldn't find an unused node with key so create a new one.
+    return [self createObjectForKey:key];
 }
 
 -(SKSpriteNode*)createObjectForKey:(NSString*)key
