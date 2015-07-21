@@ -11,9 +11,12 @@
 @interface TPPlane : SKSpriteNode
 
 @property (nonatomic) BOOL engineRunning;
+// Commented for the challenge
 @property (nonatomic) BOOL accelerating;
 @property (nonatomic) BOOL crashed;
 
+
+-(void)flap;
 -(void)setRandomColour;
 -(void)update;
 -(void)collide:(SKPhysicsBody*)body;

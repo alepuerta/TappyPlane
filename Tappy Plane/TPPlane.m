@@ -104,6 +104,8 @@ static const CGFloat kTPMaxAltitude = 300.0;
     }
 }
 
+
+// Commented for the challenge
 -(void)setAccelerating:(BOOL)accelerating
 {
     _accelerating = accelerating && !self.crashed;
@@ -114,7 +116,26 @@ static const CGFloat kTPMaxAltitude = 300.0;
     _crashed = crashed;
     if (crashed) {
         self.engineRunning = NO;
+        // Commented for the challenge
         self.accelerating = NO;
+    }
+}
+
+-(void)flap
+{
+    if (!self.crashed && self.position.y < kTPMaxAltitude) {
+        
+        // Make sure plane can't drop faster than -200
+        if (self.physicsBody.velocity.dy < -200) {
+            self.physicsBody.velocity = CGVectorMake(0, -200);
+        }
+        
+        [self.physicsBody applyImpulse:CGVectorMake(0.0, 20)];
+        
+        // Make sure plane can't go up faster than 300
+        if (self.physicsBody.velocity.dy > 300) {
+            self.physicsBody.velocity = CGVectorMake(0, 300);
+        }
     }
 }
 
@@ -162,6 +183,7 @@ static const CGFloat kTPMaxAltitude = 300.0;
 
 -(void)update
 {
+    // Commented for the challenge
     if (self.accelerating && self.position.y < kTPMaxAltitude) {
         [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
     }

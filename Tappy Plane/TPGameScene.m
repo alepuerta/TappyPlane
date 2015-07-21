@@ -147,7 +147,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
             [self newGame];
         }
         else {
+            //[_player flap]; // For the challenge
             _player.physicsBody.affectedByGravity = YES;
+            // Commented for the challenge
             self.player.accelerating = YES;
             self.obstacles.scrolling = YES;
         }
@@ -158,6 +160,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
+        // Commented for the challenge
         self.player.accelerating = NO;
     }
 }
