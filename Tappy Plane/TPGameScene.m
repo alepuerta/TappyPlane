@@ -57,6 +57,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup obstacle layer.
         _obstacles = [[TPObstacleLayer alloc] init];
+        _obstacles.collectableDelegate = self;
         _obstacles.horizontalScrollSpeed = -80;
         _obstacles.scrolling = YES;
         _obstacles.floor = 0.0;
@@ -138,31 +139,31 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 }
 
+-(void)wasCollected:(TPCollectable *)collectable
+{
+    NSLog(@"Collected item worth %ld points", collectable.pointValue);
+}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        if (self.player.crashed) {
-            // Reset game.
-            [self newGame];
-        }
-        else {
-            //[_player flap]; // For the challenge
-            _player.physicsBody.affectedByGravity = YES;
-            // Commented for the challenge
-            self.player.accelerating = YES;
-            self.obstacles.scrolling = YES;
-        }
-        
+    if (self.player.crashed) {
+        // Reset game.
+        [self newGame];
+    }
+    else {
+        //[_player flap]; // For the challenge
+        _player.physicsBody.affectedByGravity = YES;
+        // Commented for the challenge
+        self.player.accelerating = YES;
+        self.obstacles.scrolling = YES;
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        // Commented for the challenge
-        self.player.accelerating = NO;
-    }
+    // Commented for the challenge
+    self.player.accelerating = NO;
 }
 
 -(void)didBeginContact:(SKPhysicsContact *)contact
