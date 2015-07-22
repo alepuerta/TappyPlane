@@ -46,7 +46,8 @@ static const CGFloat kTPMaxAltitude = 300.0;
         self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
         self.physicsBody.mass = 0.08;
         self.physicsBody.categoryBitMask = kTPCategoryPlane;
-        self.physicsBody.contactTestBitMask = kTPCategoryGround;
+        self.physicsBody.contactTestBitMask = kTPCategoryGround | kTPCategoryCollectable;
+        self.physicsBody.collisionBitMask = kTPCategoryGround;
         
         // Init array to hold animation actions.
         _planeAnimations = [[NSMutableArray alloc] init];
@@ -156,6 +157,9 @@ static const CGFloat kTPMaxAltitude = 300.0;
         if (body.categoryBitMask == kTPCategoryGround) {
             // Hit the ground.
             self.crashed = YES;
+        }
+        if (body.categoryBitMask == kTPCategoryCollectable) {
+            [body.node runAction:[SKAction removeFromParent]];
         }
     }
 }
