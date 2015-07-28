@@ -12,6 +12,7 @@
 #import "TPConstants.h"
 #import "TPObstacleLayer.h"
 #import "TPBitmapFontLabel.h"
+#import "TPTilesetTextureProvider.h"
 
 @interface TPGameScene()
 
@@ -131,6 +132,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)newGame
 {
+    // Randomize tileset.
+    [[TPTilesetTextureProvider getProvider] randomizeTileset];
+    
     // Reset layers.
     self.foreground.position = CGPointZero;
     [self.foreground layoutTiles];

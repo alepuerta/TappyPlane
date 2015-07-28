@@ -8,6 +8,7 @@
 
 #import "TPObstacleLayer.h"
 #import "TPConstants.h"
+#import "TPTilesetTextureProvider.h"
 
 @interface TPObstacleLayer()
 
@@ -42,9 +43,15 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 -(void)reset
 {
-    // Loop throught child nodes and repositoion for reuse.
+    // Loop throught child nodes and repositoion for reuse and update texture.
     for (SKNode *node in self.children) {
         node.position = CGPointMake(-1000, 0);
+        if (node.name == kTPKeyMountainUp) {
+            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
+        }
+        if (node.name == kTPKeyMountainDown) {
+            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+        }
     }
     
     // Reposition marker
@@ -124,7 +131,7 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
     SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
     if (key == kTPKeyMountainUp) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
         
@@ -141,7 +148,7 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
         
         [self addChild:object];
     } else if (key == kTPKeyMountainDown) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
         

@@ -26,11 +26,13 @@
 		A92268471B60503F00A461AE /* TPCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = A92268461B60503F00A461AE /* TPCollectable.m */; };
 		A93E2F061B4DD798006EC2C2 /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E2F051B4DD798006EC2C2 /* TPScrollingNode.m */; };
 		A93E2F091B4DDCE8006EC2C2 /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E2F081B4DDCE8006EC2C2 /* TPScrollingLayer.m */; };
+		A9492E901B6833BE00985B36 /* TPTilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9492E8F1B6833BE00985B36 /* TPTilesetTextureProvider.m */; };
 		A97CA84E1B4B1FBF0052F0F0 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = A97CA84C1B4B1FBF0052F0F0 /* PlanePuffTrail.sks */; };
 		A97CA84F1B4B1FBF0052F0F0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A97CA84D1B4B1FBF0052F0F0 /* spark.png */; };
 		A98543591B5C44E400C74936 /* TPObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A98543581B5C44E400C74936 /* TPObstacleLayer.m */; };
 		A98E00FF1B571B0F0059D3E2 /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E00FE1B571B0F0059D3E2 /* TPConstants.m */; };
 		A9EEC1751B61A6AE007E6CDE /* TPBitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EEC1741B61A6AE007E6CDE /* TPBitmapFontLabel.m */; };
+		A9EF9C381B66C38A0086C713 /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EF9C371B66C38A0086C713 /* TilesetGraphics.plist */; };
 		A9F8A7AE1B44A1BF0037AAD6 /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9F8A7AD1B44A1BF0037AAD6 /* Graphics.atlas */; };
 		A9F8A7B11B44A3D90037AAD6 /* TPPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F8A7B01B44A3D90037AAD6 /* TPPlane.m */; };
 		A9F8A7B31B44A6350037AAD6 /* PlaneAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9F8A7B21B44A6350037AAD6 /* PlaneAnimations.plist */; };
@@ -75,6 +77,8 @@
 		A93E2F051B4DD798006EC2C2 /* TPScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingNode.m; sourceTree = "<group>"; };
 		A93E2F071B4DDCE8006EC2C2 /* TPScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPScrollingLayer.h; sourceTree = "<group>"; };
 		A93E2F081B4DDCE8006EC2C2 /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
+		A9492E8E1B6833BE00985B36 /* TPTilesetTextureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTilesetTextureProvider.h; sourceTree = "<group>"; };
+		A9492E8F1B6833BE00985B36 /* TPTilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTilesetTextureProvider.m; sourceTree = "<group>"; };
 		A97CA84C1B4B1FBF0052F0F0 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
 		A97CA84D1B4B1FBF0052F0F0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		A98543571B5C44E400C74936 /* TPObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPObstacleLayer.h; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		A98E00FE1B571B0F0059D3E2 /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
 		A9EEC1731B61A6AE007E6CDE /* TPBitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBitmapFontLabel.h; sourceTree = "<group>"; };
 		A9EEC1741B61A6AE007E6CDE /* TPBitmapFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBitmapFontLabel.m; sourceTree = "<group>"; };
+		A9EF9C371B66C38A0086C713 /* TilesetGraphics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TilesetGraphics.plist; sourceTree = "<group>"; };
 		A9F8A7AD1B44A1BF0037AAD6 /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 		A9F8A7AF1B44A3D90037AAD6 /* TPPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPlane.h; sourceTree = "<group>"; };
 		A9F8A7B01B44A3D90037AAD6 /* TPPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPlane.m; sourceTree = "<group>"; };
@@ -155,6 +160,8 @@
 				A91FF5E11B447AB7008298F1 /* TPAppDelegate.m */,
 				A98E00FD1B571B0F0059D3E2 /* TPConstants.h */,
 				A98E00FE1B571B0F0059D3E2 /* TPConstants.m */,
+				A9492E8E1B6833BE00985B36 /* TPTilesetTextureProvider.h */,
+				A9492E8F1B6833BE00985B36 /* TPTilesetTextureProvider.m */,
 				A9EEC1731B61A6AE007E6CDE /* TPBitmapFontLabel.h */,
 				A9EEC1741B61A6AE007E6CDE /* TPBitmapFontLabel.m */,
 				A91FF5E31B447AB7008298F1 /* Main.storyboard */,
@@ -220,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				A9F8A7B21B44A6350037AAD6 /* PlaneAnimations.plist */,
+				A9EF9C371B66C38A0086C713 /* TilesetGraphics.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 			files = (
 				A91FF5DC1B447AB7008298F1 /* InfoPlist.strings in Resources */,
 				A9F8A7B31B44A6350037AAD6 /* PlaneAnimations.plist in Resources */,
+				A9EF9C381B66C38A0086C713 /* TilesetGraphics.plist in Resources */,
 				A97CA84E1B4B1FBF0052F0F0 /* PlanePuffTrail.sks in Resources */,
 				A97CA84F1B4B1FBF0052F0F0 /* spark.png in Resources */,
 				A91FF5EF1B447AB7008298F1 /* Images.xcassets in Resources */,
@@ -336,6 +345,7 @@
 				A91FF5DE1B447AB7008298F1 /* main.m in Sources */,
 				A9F8A7B11B44A3D90037AAD6 /* TPPlane.m in Sources */,
 				A92268471B60503F00A461AE /* TPCollectable.m in Sources */,
+				A9492E901B6833BE00985B36 /* TPTilesetTextureProvider.m in Sources */,
 				A91FF60D1B447B34008298F1 /* TPGameScene.m in Sources */,
 				A9EEC1751B61A6AE007E6CDE /* TPBitmapFontLabel.m in Sources */,
 				A93E2F091B4DDCE8006EC2C2 /* TPScrollingLayer.m in Sources */,
