@@ -84,6 +84,8 @@
 		A97CA84D1B4B1FBF0052F0F0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		A982F0A31B6FE1AB0016C460 /* TPChallengeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPChallengeProvider.h; sourceTree = "<group>"; };
 		A982F0A41B6FE1AB0016C460 /* TPChallengeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPChallengeProvider.m; sourceTree = "<group>"; };
+		A982F0A61B700D380016C460 /* TPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPButton.h; sourceTree = "<group>"; };
+		A982F0A71B700D380016C460 /* TPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPButton.m; sourceTree = "<group>"; };
 		A98543571B5C44E400C74936 /* TPObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPObstacleLayer.h; sourceTree = "<group>"; };
 		A98543581B5C44E400C74936 /* TPObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPObstacleLayer.m; sourceTree = "<group>"; };
 		A98E00FD1B571B0F0059D3E2 /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
@@ -176,6 +178,8 @@
 				A91FF60C1B447B34008298F1 /* TPGameScene.m */,
 				A9F8A7AF1B44A3D90037AAD6 /* TPPlane.h */,
 				A9F8A7B01B44A3D90037AAD6 /* TPPlane.m */,
+				A982F0A61B700D380016C460 /* TPButton.h */,
+				A982F0A71B700D380016C460 /* TPButton.m */,
 				A92268451B60503F00A461AE /* TPCollectable.h */,
 				A92268461B60503F00A461AE /* TPCollectable.m */,
 				A98543571B5C44E400C74936 /* TPObstacleLayer.h */,
@@ -348,6 +352,7 @@
 				A98E00FF1B571B0F0059D3E2 /* TPConstants.m in Sources */,
 				A91FF5E21B447AB7008298F1 /* TPAppDelegate.m in Sources */,
 				A91FF5DE1B447AB7008298F1 /* main.m in Sources */,
+				A982F0A81B700D380016C460 /* TPButton.m in Sources */,
 				A9F8A7B11B44A3D90037AAD6 /* TPPlane.m in Sources */,
 				A92268471B60503F00A461AE /* TPCollectable.m in Sources */,
 				A9492E901B6833BE00985B36 /* TPTilesetTextureProvider.m in Sources */,
