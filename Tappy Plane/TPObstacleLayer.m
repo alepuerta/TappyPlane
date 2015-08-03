@@ -9,6 +9,8 @@
 #import "TPObstacleLayer.h"
 #import "TPConstants.h"
 #import "TPTilesetTextureProvider.h"
+#import "TPConstants.h"
+#import "TPChallengeProvider.h"
 
 @interface TPObstacleLayer()
 
@@ -21,10 +23,6 @@ static const CGFloat kTPVerticalGap = 90.0;
 static const CGFloat kTPSpaceBetweenObstacleSets = 180.0;
 static const int kTPCollectableVerticalRange = 200.0;
 static const CGFloat kTPCollectableClearance = 50.0;
-
-static NSString *const kTPKeyMountainUp = @"MountainUp";
-static NSString *const kTPKeyMountainDown = @"MountainDown";
-static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 @implementation TPObstacleLayer
 
@@ -46,11 +44,9 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
     // Loop throught child nodes and repositoion for reuse and update texture.
     for (SKNode *node in self.children) {
         node.position = CGPointMake(-1000, 0);
-        if (node.name == kTPKeyMountainUp) {
-            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
-        }
-        if (node.name == kTPKeyMountainDown) {
-            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+        if (node.name == kTPKeyMountainUp || node.name == kTPKeyMountainDown
+            || node.name == kTPKeyMountainUpAlternate || node.name == kTPKeyMountainDownAlternate) {
+            ((SKSpriteNode*)node).texture = [[TPTilesetTextureProvider getProvider] getTextureForKey:node.name];
         }
     }
     
@@ -77,6 +73,7 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
 
 -(void)addObstacleSet
 {
+    /*
     // Get mountain nodes.
     SKSpriteNode *mountainUp = [self getUnusedObjectForKey:kTPKeyMountainUp];
     SKSpriteNode *mountainDown = [self getUnusedObjectForKey:kTPKeyMountainDown];
@@ -100,9 +97,24 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
     yPosition = fminf(yPosition, self.ceiling - kTPCollectableClearance);
     
     collectable.position = CGPointMake(self.marker + (kTPSpaceBetweenObstacleSets * 0.5), yPosition);
+    */
     
+    
+    NSArray *challenge = [[TPChallengeProvider getProvider] getRandomChallenge];
+    
+    
+    CGFloat furthestItem = 0;
+    for (TPChallengeItem *item in challenge) {
+        SKSpriteNode *object = [self getUnusedObjectForKey:item.obstacleKey];
+        object.position = CGPointMake(item.position.x + self.marker, item.position.y);
+        if (item.position.x > furthestItem) {
+            furthestItem = item.position.x;
+        }
+    }
+
+     
     // Reposition marker.
-    self.marker += kTPSpaceBetweenObstacleSets;
+    self.marker += furthestItem + kTPSpaceBetweenObstacleSets;
 }
 
 -(SKSpriteNode*)getUnusedObjectForKey:(NSString*)key
@@ -130,8 +142,8 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
     
     SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@"Graphics"];
     
-    if (key == kTPKeyMountainUp) {
-        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
+    if (key == kTPKeyMountainUp || key == kTPKeyMountainUpAlternate) {
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:key]];
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
         
@@ -147,8 +159,8 @@ static NSString *const kTPKeyCollectableStar = @"CollectableStar";
         object.physicsBody.categoryBitMask = kTPCategoryGround;
         
         [self addChild:object];
-    } else if (key == kTPKeyMountainDown) {
-        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
+    } else if (key == kTPKeyMountainDown || key == kTPKeyMountainDownAlternate) {
+        object = [SKSpriteNode spriteNodeWithTexture:[[TPTilesetTextureProvider getProvider] getTextureForKey:key]];
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
         
