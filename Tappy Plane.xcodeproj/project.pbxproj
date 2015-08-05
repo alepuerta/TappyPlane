@@ -27,6 +27,7 @@
 		A93E2F061B4DD798006EC2C2 /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E2F051B4DD798006EC2C2 /* TPScrollingNode.m */; };
 		A93E2F091B4DDCE8006EC2C2 /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E2F081B4DDCE8006EC2C2 /* TPScrollingLayer.m */; };
 		A9492E901B6833BE00985B36 /* TPTilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9492E8F1B6833BE00985B36 /* TPTilesetTextureProvider.m */; };
+		A9678FA11B72C7E600E0B9A9 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A982F0A71B700D380016C460 /* TPButton.m */; };
 		A97CA84E1B4B1FBF0052F0F0 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = A97CA84C1B4B1FBF0052F0F0 /* PlanePuffTrail.sks */; };
 		A97CA84F1B4B1FBF0052F0F0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A97CA84D1B4B1FBF0052F0F0 /* spark.png */; };
 		A982F0A51B6FE1AB0016C460 /* TPChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A982F0A41B6FE1AB0016C460 /* TPChallengeProvider.m */; };
@@ -352,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9678FA11B72C7E600E0B9A9 /* TPButton.m in Sources */,
 				A91FF5E81B447AB7008298F1 /* TPViewController.m in Sources */,
 				A98543591B5C44E400C74936 /* TPObstacleLayer.m in Sources */,
 				A98E00FF1B571B0F0059D3E2 /* TPConstants.m in Sources */,
