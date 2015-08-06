@@ -29,6 +29,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) TPScrollingLayer *foreground;
 @property (nonatomic) TPBitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger bestScore;
 @property (nonatomic) TPGameOverMenu *gameOverMenu;
 @property (nonatomic) GameState gameState;
 
@@ -36,6 +37,7 @@ typedef enum : NSUInteger {
 @end
 
 static const CGFloat kMinFPS = 10.0 / 60.0;
+static NSString *const kTPKeyBestScore = @"BestScore";
 
 @implementation TPGameScene
 
@@ -89,6 +91,9 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _player = [[TPPlane alloc] init];
         _player.physicsBody.affectedByGravity = NO;
         [_world addChild:_player];
+        
+        // Load best score.
+        self.bestScore = [[NSUserDefaults standardUserDefaults] integerForKey:kTPKeyBestScore];
         
         // Setup score label.
         _scoreLabel = [[TPBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
@@ -179,6 +184,27 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     self.gameState = GameReady;
 }
 
+-(void)gameOver
+{
+    // Update game state.
+    self.gameState = GameOver;
+    // Fade out score display
+    [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+    // Set properties om game over menu.
+    self.gameOverMenu.score = self.score;
+    self.gameOverMenu.medal = [self getMedalForCurrentScore];
+    // Update best score.
+    if (self.score > self.bestScore) {
+        self.bestScore = self.score;
+        [[NSUserDefaults standardUserDefaults] setInteger:self.bestScore forKey:kTPKeyBestScore];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    self.gameOverMenu.bestScore = self.bestScore;
+    // Show game over menu.
+    [self addChild:self.gameOverMenu];
+    [self.gameOverMenu show];
+}
+
 -(void)wasCollected:(TPCollectable *)collectable
 {
 //    NSLog(@"Collected item worth %ld points", collectable.pointValue);
@@ -235,12 +261,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     [self.player update];
     if (self.gameState == GameRunning && self.player.crashed) {
         // Player just crashed in last frame so trigger game  over.
-        self.gameState = GameOver;
-        // Fade out score display
-        [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
-        // Show game over menu.
-        [self addChild:self.gameOverMenu];
-        [self.gameOverMenu show];
+        [self gameOver];
     }
     
     if (self.gameState != GameOver) {
@@ -249,5 +270,24 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         [self.obstacles updateWithTimeElapsed:timeElapsed];
     }
 }
+
+-(MedalType)getMedalForCurrentScore
+{
+    NSInteger adjustedScore = self.score - (self.bestScore / 5);
+    
+    if (adjustedScore >= 45) {
+        return MedalGold;
+    } else if (adjustedScore >= 25) {
+        return  MedalSilver;
+    } else if (adjustedScore >= 10) {
+        return MedalBronze;
+    }
+    return MedalNone;
+    
+    
+}
+
+
+
 
 @end
