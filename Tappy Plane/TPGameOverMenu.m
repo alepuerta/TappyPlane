@@ -107,7 +107,9 @@
 
 -(void)pressedPlayButton
 {
-    [self show];
+    if (self.delegate) {
+        [self.delegate pressedStartNewGameButton];
+    }
 }
 
 -(void)setScore:(NSInteger)score
@@ -154,7 +156,7 @@
     SKAction *raisePanel = [SKAction group:@[[SKAction fadeInWithDuration:0.4],
                                              [SKAction moveByX:0.0 y:100 duration:0.4]]];
     raisePanel.timingMode = SKActionTimingEaseOut;
-    self.panelGroup.alpha = 0.0;
+    self.panelGroup.alpha = 0.001;
     self.panelGroup.position = CGPointMake(self.panelGroup.position.x, self.panelGroup.position.y - 100);
     [self.panelGroup runAction:[SKAction sequence:@[[SKAction waitForDuration:0.7], raisePanel]]];
     

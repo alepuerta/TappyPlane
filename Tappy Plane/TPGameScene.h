@@ -8,7 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "TPCollectable.h"
+#import "TPGameOverMenu.h"
 
-@interface TPGameScene : SKScene <SKPhysicsContactDelegate, TPCollectableDelegate>
+@interface TPGameScene : SKScene <SKPhysicsContactDelegate, TPCollectableDelegate, TPGameOverMenuDelegate>
 
 @end
