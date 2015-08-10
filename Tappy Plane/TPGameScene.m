@@ -149,8 +149,22 @@ static NSString *const kTPKeyBestScore = @"BestScore";
 
 -(void)pressedStartNewGameButton
 {
-    [self newGame];
-    [self.gameOverMenu removeFromParent];
+    SKSpriteNode *blackRectangle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:self.size];
+    blackRectangle.anchorPoint = CGPointZero;
+    blackRectangle.alpha = 0.0;
+    blackRectangle.zPosition = 99;
+    [self addChild:blackRectangle];
+    
+    SKAction *startNewGame = [SKAction runBlock:^{
+        [self newGame];
+        [self.gameOverMenu removeFromParent];
+    }];
+    
+    SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4],
+                                                    startNewGame,
+                                                    [SKAction fadeOutWithDuration:0.6],
+                                                    [SKAction removeFromParent]]];
+    [blackRectangle runAction:fadeTransition];
     
 }
 
@@ -249,6 +263,13 @@ static NSString *const kTPKeyBestScore = @"BestScore";
     }
 }
 
+-(void)bump
+{
+    SKAction *bump = [SKAction sequence:@[[SKAction moveBy:CGVectorMake(-5, -4) duration:0.1],
+                                          [SKAction moveTo:CGPointZero duration:0.1]]];
+    [self.world runAction:bump];
+}
+
 -(void)update:(NSTimeInterval)currentTime
 {
     static NSTimeInterval lastCallTime;
@@ -261,6 +282,7 @@ static NSString *const kTPKeyBestScore = @"BestScore";
     [self.player update];
     if (self.gameState == GameRunning && self.player.crashed) {
         // Player just crashed in last frame so trigger game  over.
+        [self bump];
         [self gameOver];
     }
     
