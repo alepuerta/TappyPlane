@@ -36,6 +36,7 @@
 		A982F0A51B6FE1AB0016C460 /* TPChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A982F0A41B6FE1AB0016C460 /* TPChallengeProvider.m */; };
 		A98543591B5C44E400C74936 /* TPObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A98543581B5C44E400C74936 /* TPObstacleLayer.m */; };
 		A98E00FF1B571B0F0059D3E2 /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E00FE1B571B0F0059D3E2 /* TPConstants.m */; };
+		A9BEC2071B7A675B001B4CDB /* TPWeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BEC2061B7A675B001B4CDB /* TPWeatherLayer.m */; };
 		A9D9318E1B714397002791AC /* TPGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9318D1B714397002791AC /* TPGameOverMenu.m */; };
 		A9EEC1751B61A6AE007E6CDE /* TPBitmapFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EEC1741B61A6AE007E6CDE /* TPBitmapFontLabel.m */; };
 		A9EF9C381B66C38A0086C713 /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EF9C371B66C38A0086C713 /* TilesetGraphics.plist */; };
@@ -99,6 +100,8 @@
 		A98543581B5C44E400C74936 /* TPObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPObstacleLayer.m; sourceTree = "<group>"; };
 		A98E00FD1B571B0F0059D3E2 /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		A98E00FE1B571B0F0059D3E2 /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
+		A9BEC2051B7A675B001B4CDB /* TPWeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPWeatherLayer.h; sourceTree = "<group>"; };
+		A9BEC2061B7A675B001B4CDB /* TPWeatherLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPWeatherLayer.m; sourceTree = "<group>"; };
 		A9D9318C1B714397002791AC /* TPGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGameOverMenu.h; sourceTree = "<group>"; };
 		A9D9318D1B714397002791AC /* TPGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGameOverMenu.m; sourceTree = "<group>"; };
 		A9EEC1731B61A6AE007E6CDE /* TPBitmapFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPBitmapFontLabel.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				A98543581B5C44E400C74936 /* TPObstacleLayer.m */,
 				A93E2F071B4DDCE8006EC2C2 /* TPScrollingLayer.h */,
 				A93E2F081B4DDCE8006EC2C2 /* TPScrollingLayer.m */,
+				A9BEC2051B7A675B001B4CDB /* TPWeatherLayer.h */,
+				A9BEC2061B7A675B001B4CDB /* TPWeatherLayer.m */,
 				A93E2F041B4DD798006EC2C2 /* TPScrollingNode.h */,
 				A93E2F051B4DD798006EC2C2 /* TPScrollingNode.m */,
 				A9D9318C1B714397002791AC /* TPGameOverMenu.h */,
@@ -378,6 +383,7 @@
 				A944237D1B7A54B50007719F /* TPGetReadyMenu.m in Sources */,
 				A9492E901B6833BE00985B36 /* TPTilesetTextureProvider.m in Sources */,
 				A91FF60D1B447B34008298F1 /* TPGameScene.m in Sources */,
+				A9BEC2071B7A675B001B4CDB /* TPWeatherLayer.m in Sources */,
 				A982F0A51B6FE1AB0016C460 /* TPChallengeProvider.m in Sources */,
 				A9EEC1751B61A6AE007E6CDE /* TPBitmapFontLabel.m in Sources */,
 				A93E2F091B4DDCE8006EC2C2 /* TPScrollingLayer.m in Sources */,
