@@ -27,6 +27,8 @@
 		A93E2F061B4DD798006EC2C2 /* TPScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E2F051B4DD798006EC2C2 /* TPScrollingNode.m */; };
 		A93E2F091B4DDCE8006EC2C2 /* TPScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E2F081B4DDCE8006EC2C2 /* TPScrollingLayer.m */; };
 		A944237D1B7A54B50007719F /* TPGetReadyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A944237C1B7A54B50007719F /* TPGetReadyMenu.m */; };
+		A944237F1B7A60E90007719F /* SnowEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = A944237E1B7A60E90007719F /* SnowEffect.sks */; };
+		A94423811B7A61B30007719F /* RainEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = A94423801B7A61B30007719F /* RainEffect.sks */; };
 		A9492E901B6833BE00985B36 /* TPTilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A9492E8F1B6833BE00985B36 /* TPTilesetTextureProvider.m */; };
 		A9678FA11B72C7E600E0B9A9 /* TPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A982F0A71B700D380016C460 /* TPButton.m */; };
 		A97CA84E1B4B1FBF0052F0F0 /* PlanePuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = A97CA84C1B4B1FBF0052F0F0 /* PlanePuffTrail.sks */; };
@@ -83,6 +85,8 @@
 		A93E2F081B4DDCE8006EC2C2 /* TPScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPScrollingLayer.m; sourceTree = "<group>"; };
 		A944237B1B7A54B50007719F /* TPGetReadyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGetReadyMenu.h; sourceTree = "<group>"; };
 		A944237C1B7A54B50007719F /* TPGetReadyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPGetReadyMenu.m; sourceTree = "<group>"; };
+		A944237E1B7A60E90007719F /* SnowEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEffect.sks; sourceTree = "<group>"; };
+		A94423801B7A61B30007719F /* RainEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainEffect.sks; sourceTree = "<group>"; };
 		A9492E8E1B6833BE00985B36 /* TPTilesetTextureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTilesetTextureProvider.h; sourceTree = "<group>"; };
 		A9492E8F1B6833BE00985B36 /* TPTilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTilesetTextureProvider.m; sourceTree = "<group>"; };
 		A97CA84C1B4B1FBF0052F0F0 /* PlanePuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlanePuffTrail.sks; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 			children = (
 				A97CA84C1B4B1FBF0052F0F0 /* PlanePuffTrail.sks */,
 				A97CA84D1B4B1FBF0052F0F0 /* spark.png */,
+				A944237E1B7A60E90007719F /* SnowEffect.sks */,
+				A94423801B7A61B30007719F /* RainEffect.sks */,
 			);
 			name = "Particle Effects";
 			sourceTree = "<group>";
@@ -334,8 +340,10 @@
 			files = (
 				A91FF5DC1B447AB7008298F1 /* InfoPlist.strings in Resources */,
 				A9F8A7B31B44A6350037AAD6 /* PlaneAnimations.plist in Resources */,
+				A94423811B7A61B30007719F /* RainEffect.sks in Resources */,
 				A9EF9C381B66C38A0086C713 /* TilesetGraphics.plist in Resources */,
 				A97CA84E1B4B1FBF0052F0F0 /* PlanePuffTrail.sks in Resources */,
+				A944237F1B7A60E90007719F /* SnowEffect.sks in Resources */,
 				A97CA84F1B4B1FBF0052F0F0 /* spark.png in Resources */,
 				A91FF5EF1B447AB7008298F1 /* Images.xcassets in Resources */,
 				A9F8A7AE1B44A1BF0037AAD6 /* Graphics.atlas in Resources */,
