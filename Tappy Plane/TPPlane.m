@@ -15,6 +15,7 @@
 @property (nonatomic) NSMutableArray *planeAnimations;  // Hold animation actions.
 @property (nonatomic) SKEmitterNode *puffTrailEmitter;
 @property (nonatomic) CGFloat puffTrailBirthRate;
+@property (nonatomic) SKAction *crashTintAction;
 
 @end
 
@@ -75,6 +76,10 @@ static const CGFloat kTPMaxAltitude = 300.0;
         self.puffTrailBirthRate = self.puffTrailEmitter.particleBirthRate;
         self.puffTrailEmitter.particleBirthRate = 0;
         
+        // Setup action to tint plane when it crashes.
+        SKAction *tint = [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:0.8 duration:0.0];
+        SKAction *removeTint = [SKAction colorizeWithColorBlendFactor:0.0 duration:0.2];
+        _crashTintAction = [SKAction sequence:@[tint, removeTint]];
         
         [self setRandomColour];
     }
@@ -158,6 +163,7 @@ static const CGFloat kTPMaxAltitude = 300.0;
         if (body.categoryBitMask == kTPCategoryGround) {
             // Hit the ground.
             self.crashed = YES;
+            [self runAction:self.crashTintAction];
         }
         if (body.categoryBitMask == kTPCategoryCollectable) {
             if ([body.node respondsToSelector:@selector(collect)]) {
