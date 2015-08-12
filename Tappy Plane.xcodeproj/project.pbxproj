@@ -35,6 +35,12 @@
 		A97CA84F1B4B1FBF0052F0F0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A97CA84D1B4B1FBF0052F0F0 /* spark.png */; };
 		A982F0A51B6FE1AB0016C460 /* TPChallengeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A982F0A41B6FE1AB0016C460 /* TPChallengeProvider.m */; };
 		A98543591B5C44E400C74936 /* TPObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A98543581B5C44E400C74936 /* TPObstacleLayer.m */; };
+		A98DA72A1B7BC1E90084EDAF /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A98DA7291B7BC1E90084EDAF /* SoundManager.m */; };
+		A98DA7311B7BC4030084EDAF /* Click.caf in Resources */ = {isa = PBXBuildFile; fileRef = A98DA72C1B7BC4030084EDAF /* Click.caf */; };
+		A98DA7321B7BC4030084EDAF /* Collect.caf in Resources */ = {isa = PBXBuildFile; fileRef = A98DA72D1B7BC4030084EDAF /* Collect.caf */; };
+		A98DA7331B7BC4030084EDAF /* Crunch.caf in Resources */ = {isa = PBXBuildFile; fileRef = A98DA72E1B7BC4030084EDAF /* Crunch.caf */; };
+		A98DA7341B7BC4030084EDAF /* Engine.caf in Resources */ = {isa = PBXBuildFile; fileRef = A98DA72F1B7BC4030084EDAF /* Engine.caf */; };
+		A98DA7351B7BC4030084EDAF /* Rain.caf in Resources */ = {isa = PBXBuildFile; fileRef = A98DA7301B7BC4030084EDAF /* Rain.caf */; };
 		A98E00FF1B571B0F0059D3E2 /* TPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A98E00FE1B571B0F0059D3E2 /* TPConstants.m */; };
 		A9BEC2071B7A675B001B4CDB /* TPWeatherLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BEC2061B7A675B001B4CDB /* TPWeatherLayer.m */; };
 		A9D9318E1B714397002791AC /* TPGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9318D1B714397002791AC /* TPGameOverMenu.m */; };
@@ -98,6 +104,13 @@
 		A982F0A71B700D380016C460 /* TPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPButton.m; sourceTree = "<group>"; };
 		A98543571B5C44E400C74936 /* TPObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPObstacleLayer.h; sourceTree = "<group>"; };
 		A98543581B5C44E400C74936 /* TPObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPObstacleLayer.m; sourceTree = "<group>"; };
+		A98DA7281B7BC1E90084EDAF /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		A98DA7291B7BC1E90084EDAF /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		A98DA72C1B7BC4030084EDAF /* Click.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.caf; sourceTree = "<group>"; };
+		A98DA72D1B7BC4030084EDAF /* Collect.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Collect.caf; sourceTree = "<group>"; };
+		A98DA72E1B7BC4030084EDAF /* Crunch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crunch.caf; sourceTree = "<group>"; };
+		A98DA72F1B7BC4030084EDAF /* Engine.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Engine.caf; sourceTree = "<group>"; };
+		A98DA7301B7BC4030084EDAF /* Rain.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rain.caf; sourceTree = "<group>"; };
 		A98E00FD1B571B0F0059D3E2 /* TPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPConstants.h; sourceTree = "<group>"; };
 		A98E00FE1B571B0F0059D3E2 /* TPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPConstants.m; sourceTree = "<group>"; };
 		A9BEC2051B7A675B001B4CDB /* TPWeatherLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPWeatherLayer.h; sourceTree = "<group>"; };
@@ -172,6 +185,7 @@
 		A91FF5D71B447AB7008298F1 /* Tappy Plane */ = {
 			isa = PBXGroup;
 			children = (
+				A98DA72B1B7BC4030084EDAF /* Sounds */,
 				A97CA84B1B4B1F8A0052F0F0 /* Particle Effects */,
 				A9F8A7B41B44A8280037AAD6 /* Resources */,
 				A9F8A7AD1B44A1BF0037AAD6 /* Graphics.atlas */,
@@ -208,6 +222,8 @@
 				A9D9318D1B714397002791AC /* TPGameOverMenu.m */,
 				A944237B1B7A54B50007719F /* TPGetReadyMenu.h */,
 				A944237C1B7A54B50007719F /* TPGetReadyMenu.m */,
+				A98DA7281B7BC1E90084EDAF /* SoundManager.h */,
+				A98DA7291B7BC1E90084EDAF /* SoundManager.m */,
 				A91FF5EE1B447AB7008298F1 /* Images.xcassets */,
 				A91FF5D81B447AB7008298F1 /* Supporting Files */,
 			);
@@ -252,6 +268,18 @@
 				A94423801B7A61B30007719F /* RainEffect.sks */,
 			);
 			name = "Particle Effects";
+			sourceTree = "<group>";
+		};
+		A98DA72B1B7BC4030084EDAF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A98DA72C1B7BC4030084EDAF /* Click.caf */,
+				A98DA72D1B7BC4030084EDAF /* Collect.caf */,
+				A98DA72E1B7BC4030084EDAF /* Crunch.caf */,
+				A98DA72F1B7BC4030084EDAF /* Engine.caf */,
+				A98DA7301B7BC4030084EDAF /* Rain.caf */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		A9F8A7B41B44A8280037AAD6 /* Resources */ = {
@@ -347,11 +375,16 @@
 				A9F8A7B31B44A6350037AAD6 /* PlaneAnimations.plist in Resources */,
 				A94423811B7A61B30007719F /* RainEffect.sks in Resources */,
 				A9EF9C381B66C38A0086C713 /* TilesetGraphics.plist in Resources */,
+				A98DA7351B7BC4030084EDAF /* Rain.caf in Resources */,
 				A97CA84E1B4B1FBF0052F0F0 /* PlanePuffTrail.sks in Resources */,
 				A944237F1B7A60E90007719F /* SnowEffect.sks in Resources */,
 				A97CA84F1B4B1FBF0052F0F0 /* spark.png in Resources */,
 				A91FF5EF1B447AB7008298F1 /* Images.xcassets in Resources */,
+				A98DA7341B7BC4030084EDAF /* Engine.caf in Resources */,
 				A9F8A7AE1B44A1BF0037AAD6 /* Graphics.atlas in Resources */,
+				A98DA7331B7BC4030084EDAF /* Crunch.caf in Resources */,
+				A98DA7321B7BC4030084EDAF /* Collect.caf in Resources */,
+				A98DA7311B7BC4030084EDAF /* Click.caf in Resources */,
 				A91FF5E51B447AB7008298F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +419,7 @@
 				A9BEC2071B7A675B001B4CDB /* TPWeatherLayer.m in Sources */,
 				A982F0A51B6FE1AB0016C460 /* TPChallengeProvider.m in Sources */,
 				A9EEC1751B61A6AE007E6CDE /* TPBitmapFontLabel.m in Sources */,
+				A98DA72A1B7BC1E90084EDAF /* SoundManager.m in Sources */,
 				A93E2F091B4DDCE8006EC2C2 /* TPScrollingLayer.m in Sources */,
 				A93E2F061B4DD798006EC2C2 /* TPScrollingNode.m in Sources */,
 			);

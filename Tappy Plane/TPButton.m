@@ -12,6 +12,7 @@
 @interface TPButton()
 
 @property (nonatomic) CGRect fullSizeFrame;
+@property (nonatomic) BOOL pressed;
 
 @end;
 
@@ -42,10 +43,15 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
-        if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
-            [self setScale:self.pressedScale];
-        } else {
-            [self setScale:1.0];
+        if (self.pressed != CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
+            self.pressed = !self.pressed;
+            
+            if (self.pressed) {
+                [self setScale:self.pressedScale];
+                [self.pressedSound play];
+            } else {
+                [self setScale:1.0];
+            }
         }
     }
 }
@@ -53,6 +59,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setScale:1.0];
+    self.pressed = NO;
     for (UITouch *touch in touches) {
         if (CGRectContainsPoint(self.fullSizeFrame, [touch locationInNode:self.parent])) {
             // Pressed button.
@@ -65,6 +72,7 @@
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self setScale:1.0];
+    self.pressed = NO;
 }
 
 @end

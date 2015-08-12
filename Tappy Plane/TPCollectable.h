@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SoundManager.h"
 
 @class TPCollectable;
 
@@ -18,6 +19,7 @@
 
 @interface TPCollectable : SKSpriteNode
 
+@property (nonatomic) Sound *collectionSound;
 @property (nonatomic, weak) id<TPCollectableDelegate> delegate;
 @property (nonatomic) NSInteger pointValue;
 

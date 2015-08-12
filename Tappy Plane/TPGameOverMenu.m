@@ -9,6 +9,7 @@
 #import "TPGameOverMenu.h"
 #import "TPBitmapFontLabel.h"
 #import "TPButton.h"
+#import "SoundManager.h"
 
 @interface TPGameOverMenu()
 
@@ -92,6 +93,7 @@
         
         // Setup play button.
         _playButton = [TPButton spriteNodeWithTexture:[atlas textureNamed:@"buttonPlay"]];
+        _playButton.pressedSound = [Sound soundNamed:@"Click.caf"];
         _playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
         [_playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
         [self addChild:_playButton];

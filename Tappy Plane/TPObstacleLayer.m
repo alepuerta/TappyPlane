@@ -11,6 +11,7 @@
 #import "TPTilesetTextureProvider.h"
 #import "TPConstants.h"
 #import "TPChallengeProvider.h"
+#import "SoundManager.h"
 
 @interface TPObstacleLayer()
 
@@ -179,6 +180,7 @@ static const CGFloat kTPCollectableClearance = 50.0;
         object = [TPCollectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
         ((TPCollectable*)object).pointValue = 1;
         ((TPCollectable*)object).delegate = self.collectableDelegate;
+        ((TPCollectable*)object).collectionSound = [Sound soundNamed:@"Collect.caf"];
         object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
         object.physicsBody.categoryBitMask = kTPCategoryCollectable;
         object.physicsBody.dynamic = NO;
